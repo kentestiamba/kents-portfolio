@@ -1,7 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: true,
-}
+const basePath = process.env.NODE_ENV === 'production' ? '/kents-portfolio' : '';
 
-module.exports = nextConfig
+const nextConfig = {
+  basePath,
+  assetPrefix: `${basePath}/`,
+  reactStrictMode: true,
+  swcMinify: true,
+};
+
+module.exports = nextConfig;
+
